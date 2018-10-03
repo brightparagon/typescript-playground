@@ -1,2 +1,3 @@
 "use strict";
-console.log("it works");
+var ss = 'sgg';
+// ss = 22
