@@ -86,3 +86,8 @@ let complex2: Complex = {
     return [2, 3]
   }
 }
+
+// union type
+let f: number | string | boolean = 2
+f = false
+f = '22'

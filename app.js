@@ -67,6 +67,10 @@ var complex = {
 var complex2 = {
     data: [1, 2, 3],
     output: function (all) {
-        return '';
+        return [2, 3];
     }
 };
+// union type
+var f = 2;
+f = false;
+f = '22';
