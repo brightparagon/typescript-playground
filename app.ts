@@ -91,3 +91,16 @@ let complex2: Complex = {
 let f: number | string | boolean = 2
 f = false
 f = '22'
+
+// never type
+function neverReturns(): never {
+  throw new Error('An error!')
+}
+
+// Nullable type
+let canBeNull: number | null = 12
+canBeNull = null
+let canAlsoBeNull
+canAlsoBeNull = null
+let canBeAny = null
+canBeAny = 12

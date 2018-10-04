@@ -74,3 +74,14 @@ var complex2 = {
 var f = 2;
 f = false;
 f = '22';
+// never type
+function neverReturns() {
+    throw new Error('An error!');
+}
+// Nullable type
+var canBeNull = 12;
+canBeNull = null;
+var canAlsoBeNull;
+canAlsoBeNull = null;
+var canBeAny = null;
+canBeAny = 12;
