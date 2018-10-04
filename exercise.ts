@@ -18,4 +18,4 @@ let mySelf: { name: string, bankAccount: BankAccount, hobbies: string[] } = {
 
 mySelf.bankAccount.deposit(3000)
 
-console.log(mySelf);
+console.log(mySelf)
