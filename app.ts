@@ -72,6 +72,7 @@ let user: { name: string, age: number } = {
 let complex: { data: number[], output: (all: boolean) => number[] } = {
   data: [1, 2, 3],
   output: (all: boolean) => {
+    if (all) return [3, 5]
     return [2, 3]
   }
 }
@@ -83,6 +84,7 @@ type Complex = { data: number[], output: (all: boolean) => number[] };
 let complex2: Complex = {
   data: [1, 2, 3],
   output: (all: boolean) => {
+    if (all) return [3, 5]
     return [2, 3]
   }
 }
@@ -104,3 +106,16 @@ let canAlsoBeNull
 canAlsoBeNull = null
 let canBeAny = null
 canBeAny = 12
+
+// tsconfig options: strictNullChecks, noUnusedParameters
+function controlTest(isTrue: boolean, somethingElse: boolean) {
+  let result: number
+  if (isTrue) {
+    result = 12
+  }
+  if (somethingElse) {
+    result = 55
+  }
+  result = 20
+  return result
+}

@@ -61,12 +61,16 @@ var user = {
 var complex = {
     data: [1, 2, 3],
     output: function (all) {
+        if (all)
+            return [3, 5];
         return [2, 3];
     }
 };
 var complex2 = {
     data: [1, 2, 3],
     output: function (all) {
+        if (all)
+            return [3, 5];
         return [2, 3];
     }
 };
@@ -85,3 +89,15 @@ var canAlsoBeNull;
 canAlsoBeNull = null;
 var canBeAny = null;
 canBeAny = 12;
+// tsconfig options: strictNullChecks, noUnusedParameters
+function controlTest(isTrue, somethingElse) {
+    var result;
+    if (isTrue) {
+        result = 12;
+    }
+    if (somethingElse) {
+        result = 55;
+    }
+    result = 20;
+    return result;
+}
