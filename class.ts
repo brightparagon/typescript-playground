@@ -1,3 +1,4 @@
+// Class
 class Person {
   name: string
   private type: string
@@ -21,4 +22,12 @@ class Person {
 }
 
 const person = new Person("Jeffrey", "jeffrey")
-console.log(person)
+// console.log(person)
+
+// Inheritance
+class Jeffrey extends Person {
+  name = "Jeffrey" // override
+}
+
+const jeffrey = new Jeffrey("Hmm", "jeff")
+console.log(jeffrey)
