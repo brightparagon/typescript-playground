@@ -8,6 +8,16 @@ class Person {
     this.type = '??'
     this.age = 28
   }
+
+  public printAge() {
+    console.log(this.age)
+    this.setType('hmm')
+  }
+
+  public setType(type: string) {
+    this.type = type
+    console.log(this.type)
+  }
 }
 
 const person = new Person("Jeffrey", "jeffrey")

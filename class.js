@@ -6,6 +6,14 @@ var Person = /** @class */ (function () {
         this.type = '??';
         this.age = 28;
     }
+    Person.prototype.printAge = function () {
+        console.log(this.age);
+        this.setType('hmm');
+    };
+    Person.prototype.setType = function (type) {
+        this.type = type;
+        console.log(this.type);
+    };
     return Person;
 }());
 var person = new Person("Jeffrey", "jeffrey");
