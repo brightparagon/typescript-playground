@@ -26,8 +26,14 @@ const person = new Person("Jeffrey", "jeffrey")
 
 // Inheritance
 class Jeffrey extends Person {
-  name = "Jeffrey" // override
+  // name = "Jeffrey" // override
+
+  constructor(username: string) {
+    super("Jeffrey", username)
+    this.age = 35 // accessable via this because age property is protected in the parent class
+    // console.log(this.type) // error: type property is private in the parent class
+  }
 }
 
-const jeffrey = new Jeffrey("Hmm", "jeff")
+const jeffrey = new Jeffrey("jeff")
 console.log(jeffrey)
