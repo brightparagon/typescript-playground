@@ -58,3 +58,37 @@ class Plant {
 let plant = new Plant()
 plant.species = "AB"
 plant.species = "Flower"
+
+// Static Properties and Methods
+class Helpers {
+  static PI: number = 3.14
+  static calcCircumference(diameter: number): number {
+    return this.PI * diameter
+  }
+}
+
+console.log(Helpers.PI)
+console.log(Helpers.calcCircumference(3))
+
+// Abstract Class
+abstract class Project {
+  projectName: string = "Default"
+  budget: number = 500000
+
+  abstract changeName(name: string): void
+
+  calcBudget() {
+    return this.budget * 2
+  }
+}
+
+class ITProject extends Project {
+  changeName(name: string): void { // without implementing this function it would be errored
+    this.projectName = name
+  }
+}
+
+let newProject = new ITProject()
+console.log(newProject)
+newProject.changeName("Awesome IT Project!")
+console.log(newProject)
