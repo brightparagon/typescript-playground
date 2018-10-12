@@ -37,3 +37,24 @@ class Jeffrey extends Person {
 
 const jeffrey = new Jeffrey("jeff")
 console.log(jeffrey)
+
+// Getters and Setters
+class Plant {
+  private _species: string = "Default"
+
+  get species() {
+    return this._species
+  }
+
+  set species(value: string) {
+    if (value.length > 3) {
+      this._species = value
+    } else {
+      this._species = "Default"
+    }
+  }
+}
+
+let plant = new Plant()
+plant.species = "AB"
+plant.species = "Flower"
