@@ -96,7 +96,11 @@ console.log(newProject)
 // Privaite Constructors
 class OnlyOne {
   private static instance: OnlyOne
-  private constructor(public name: string) {}
+  public readonly name: string
+
+  private constructor(name: string) {
+    this.name = name
+  }
 
   static getInstance(name: string) {
     if (!OnlyOne.instance) {
