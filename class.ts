@@ -92,3 +92,21 @@ let newProject = new ITProject()
 console.log(newProject)
 newProject.changeName("Awesome IT Project!")
 console.log(newProject)
+
+// Privaite Constructors
+class OnlyOne {
+  private static instance: OnlyOne
+  private constructor(public name: string) {}
+
+  static getInstance(name: string) {
+    if (!OnlyOne.instance) {
+      OnlyOne.instance = new OnlyOne(name)
+    }
+    
+    return OnlyOne.instance
+  }
+}
+
+// let wrong = new OnlyOne("hmm?") // error
+let right = OnlyOne.getInstance("wow")
+console.log(right)

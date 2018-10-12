@@ -108,3 +108,19 @@ var newProject = new ITProject();
 console.log(newProject);
 newProject.changeName("Awesome IT Project!");
 console.log(newProject);
+// Privaite Constructors
+var OnlyOne = /** @class */ (function () {
+    function OnlyOne(name) {
+        this.name = name;
+    }
+    OnlyOne.getInstance = function (name) {
+        if (!OnlyOne.instance) {
+            OnlyOne.instance = new OnlyOne(name);
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+// let wrong = new OnlyOne("hmm?") // error
+var right = OnlyOne.getInstance("wow");
+console.log(right);
