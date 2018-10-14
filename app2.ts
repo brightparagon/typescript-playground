@@ -1,14 +1,8 @@
-namespace MyMath {
-  const PI  = 3.141592
-  
-  export function calculateCircumference(diameter: number) {
-    return diameter * PI
-  }
-
-  export function calculateRectangle(width: number, height: number) {
-    return width * height
-  }
-}
+// TypeScript import syntax
+// compile using "tsc app2.ts --outFile app2.js"
+// just using "tsc" wouldn't work
+/// <reference path="circleMath.ts" />
+/// <reference path="rectangleMath.ts" />
 
 const PI = 2.99
 
