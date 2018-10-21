@@ -13,6 +13,9 @@ var MyMath;
     }
     MyMath.calculateRectangle = calculateRectangle;
 })(MyMath || (MyMath = {}));
+// TypeScript import syntax
+// compile using "tsc app2.ts --outFile app2.js"
+// just using "tsc" wouldn't work
 /// <reference path="circleMath.ts" />
 /// <reference path="rectangleMath.ts" />
 var PI = 2.99;
