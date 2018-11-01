@@ -1,5 +1,7 @@
 interface NamedPerson {
-  name: string
+  name: string,
+  age?: number,
+  [propName: string]: any,
 }
 
 function greet(person: NamedPerson) {
@@ -12,9 +14,25 @@ function changeName(person: NamedPerson) {
 
 const personObj = {
   name: "Hmteresting",
-  age: 20
+  age: 20,
 }
 
 greet(personObj)
+
+// this would get an error
+// passing literal objects are getting checked more strictly
+// in this case this object has age property
+// that is not defined in NamedPerson interface
+// greet({
+//   name: "Hmteresting",
+//   age: 20,
+// })
+
+greet({
+  name: "Hmteresting",
+  age: 20,
+  hobbies: ['hmm', 'oh oh'],
+})
+
 changeName(personObj)
 greet(personObj)
