@@ -28,6 +28,8 @@ greet({
 });
 changeName(personObj);
 greet(personObj);
+// this would get an error
+// if defined without name property which is necessary
 var PersonClass = /** @class */ (function () {
     function PersonClass() {
         this.name = 'default name';
@@ -40,3 +42,8 @@ var PersonClass = /** @class */ (function () {
 }());
 var newPerson = new PersonClass();
 newPerson.greet('HMM..');
+var DoubleValueFunc;
+DoubleValueFunc = function (value1, value2) {
+    return (value1 + value2) * 2;
+};
+console.log(DoubleValueFunc(10, 20));

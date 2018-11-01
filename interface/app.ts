@@ -53,3 +53,15 @@ class PersonClass implements NamedPerson {
 
 const newPerson = new PersonClass()
 newPerson.greet('HMM..')
+
+// Function Types
+interface DoubleValueFunc {
+  (number1: number, number2: number): number
+}
+
+let DoubleValueFunc: DoubleValueFunc
+DoubleValueFunc = (value1: number, value2: number) => {
+  return (value1 + value2) * 2
+}
+
+console.log(DoubleValueFunc(10, 20));
