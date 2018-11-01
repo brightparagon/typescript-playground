@@ -8,6 +8,9 @@ function changeName(person) {
 var personObj = {
     name: "Hmteresting",
     age: 20,
+    greet: function (lastName) {
+        console.log(lastName);
+    }
 };
 greet(personObj);
 // this would get an error
@@ -25,3 +28,15 @@ greet({
 });
 changeName(personObj);
 greet(personObj);
+var PersonClass = /** @class */ (function () {
+    function PersonClass() {
+        this.name = 'default name';
+        this.lastName = 'default last name';
+    }
+    PersonClass.prototype.greet = function (lastName) {
+        console.log(lastName);
+    };
+    return PersonClass;
+}());
+var newPerson = new PersonClass();
+newPerson.greet('HMM..');

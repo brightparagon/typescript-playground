@@ -40,3 +40,16 @@ greet({
 
 changeName(personObj)
 greet(personObj)
+
+// this would get an error
+// if defined without name property which is necessary
+class PersonClass implements NamedPerson {
+  name: string = 'default name';
+  lastName: string = 'default last name';
+  greet(lastName: string) {
+    console.log(lastName)
+  }
+}
+
+const newPerson = new PersonClass()
+newPerson.greet('HMM..')
