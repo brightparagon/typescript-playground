@@ -23,3 +23,9 @@ testResults.push(3)
 testResults.push(false)
 // testResults.push("hmm?") // would get an error
 console.log(testResults)
+
+// Array
+function printAll<T>(args: T[]) {
+  args.forEach((element) => console.log(element))
+}
+printAll<string>(["aaa", "bbb", "ccc"])

@@ -20,3 +20,8 @@ testResults.push(3);
 testResults.push(false);
 // testResults.push("hmm?") // would get an error
 console.log(testResults);
+// Array
+function printAll(args) {
+    args.forEach(function (element) { return console.log(element); });
+}
+printAll(["aaa", "bbb", "ccc"]);
