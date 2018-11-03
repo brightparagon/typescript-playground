@@ -3,6 +3,11 @@ function echo(data: any) {
   return data  
 }
 
+function echoToString(data: any) {
+  console.log(data)
+  return "hmm"
+}
+
 console.log(echo("Hmm"))
 console.log(echo(27))
 console.log(echo({ name: "hmm", age: 82 }))
@@ -29,3 +34,8 @@ function printAll<T>(args: T[]) {
   args.forEach((element) => console.log(element))
 }
 printAll<string>(["aaa", "bbb", "ccc"])
+
+// Generic Types
+const echo2: <T>(data: T) => T = betterEcho
+
+console.log(echo2<string>("oooops!"))

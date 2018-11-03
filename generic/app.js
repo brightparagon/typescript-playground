@@ -3,6 +3,10 @@
 function echo(data) {
     return data;
 }
+function echoToString(data) {
+    console.log(data);
+    return "hmm";
+}
 console.log(echo("Hmm"));
 console.log(echo(27));
 console.log(echo({ name: "hmm", age: 82 }));
@@ -25,3 +29,6 @@ function printAll(args) {
     args.forEach(function (element) { return console.log(element); });
 }
 printAll(["aaa", "bbb", "ccc"]);
+// Generic Types
+var echo2 = betterEcho;
+console.log(echo2("oooops!"));
