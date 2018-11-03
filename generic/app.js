@@ -14,3 +14,9 @@ console.log(betterEcho("Hmm"));
 console.log(betterEcho(27));
 // console.log(betterEcho<number>("??")) // will get an error
 console.log(betterEcho({ name: "hmm", age: 82 }));
+// Built-in Generic
+var testResults = [1, 0.2, true];
+testResults.push(3);
+testResults.push(false);
+// testResults.push("hmm?") // would get an error
+console.log(testResults);
