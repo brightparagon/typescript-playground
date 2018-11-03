@@ -25,6 +25,9 @@ greet({
     name: "Hmteresting",
     age: 20,
     hobbies: ['hmm', 'oh oh'],
+    greet: function (lastName) {
+        console.log(lastName);
+    },
 });
 changeName(personObj);
 greet(personObj);
@@ -47,3 +50,10 @@ DoubleValueFunc = function (value1, value2) {
     return (value1 + value2) * 2;
 };
 console.log(DoubleValueFunc(10, 20));
+var oldPerson = {
+    age: 98,
+    name: "Hmm",
+    greet: function (name) {
+        console.log(this.age, name);
+    }
+};
