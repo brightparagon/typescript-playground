@@ -2,7 +2,7 @@ interface NamedPerson {
   name: string;
   age?: number;
   [propName: string]: any;
-  greet?(lastName: string): void;
+  greet(lastName: string): void;
 }
 
 function greet(person: NamedPerson) {
@@ -36,6 +36,9 @@ greet({
   name: "Hmteresting",
   age: 20,
   hobbies: ['hmm', 'oh oh'],
+  greet(lastName) {
+    console.log(lastName)
+  },
 })
 
 changeName(personObj)
@@ -64,4 +67,17 @@ DoubleValueFunc = (value1: number, value2: number) => {
   return (value1 + value2) * 2
 }
 
-console.log(DoubleValueFunc(10, 20));
+console.log(DoubleValueFunc(10, 20))
+
+// Interface Inheritance
+interface AgedPerson extends NamedPerson {
+  age: number;
+}
+
+const oldPerson: AgedPerson = {
+  age: 98,
+  name: "Hmm",
+  greet(name) {
+    console.log(this.age, name)
+  }
+}
