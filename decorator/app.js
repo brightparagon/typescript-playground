@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+// Decorator
 function withLogging(constructorFn) {
     console.log(constructorFn);
 }
@@ -17,6 +18,7 @@ var Fruit = /** @class */ (function () {
     ], Fruit);
     return Fruit;
 }());
+// Factory
 function isLogging(is) {
     return is ? withLogging : null;
 }
@@ -29,3 +31,20 @@ var TV = /** @class */ (function () {
     ], TV);
     return TV;
 }());
+// Advanced Decorator
+function printable(constructorFn) {
+    constructorFn.prototype.print = function () {
+        console.log(this);
+    };
+}
+var Plant = /** @class */ (function () {
+    function Plant() {
+        this.name = "Green Plant!";
+    }
+    Plant = __decorate([
+        printable
+    ], Plant);
+    return Plant;
+}());
+var plant = new Plant();
+plant.print();
