@@ -17,3 +17,15 @@ var Fruit = /** @class */ (function () {
     ], Fruit);
     return Fruit;
 }());
+function isLogging(is) {
+    return is ? withLogging : null;
+}
+var TV = /** @class */ (function () {
+    function TV() {
+        console.log("I'm a TV!");
+    }
+    TV = __decorate([
+        isLogging(true)
+    ], TV);
+    return TV;
+}());
