@@ -57,7 +57,7 @@ console.log(echo2<string>("oooops!"))
 
 // Exercise: Generic Class
 class MyMap<T extends number | string> {
-  obj: {
+  private obj: {
     [key: string]: T
   } = {}
 
