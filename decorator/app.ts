@@ -36,3 +36,30 @@ class Plant {
 
 const plant = new Plant()
 plant.print()
+
+// Method Decorator
+function editable(value: boolean) {
+  return function(target: any, propName: string, descriptor: PropertyDecorator) {
+    descriptor.writable = value
+  }
+}
+
+class Project {
+  projectName: string
+
+  constructor(name: string) {
+    this.projectName = name
+  }
+
+  @editable(false)
+  calcBudget = () => {
+    console.log(1000)
+  }
+}
+
+const project = new Project("New Project")
+project.calcBudget()
+project.calcBudget = () => {
+  console.log(2000)
+}
+project.calcBudget()
