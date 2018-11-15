@@ -11,7 +11,7 @@ class Fruit {
 }
 
 // Factory
-function isLogging(is: boolean) {
+function isLogging(is: boolean): any {
   return is ? withLogging : null
 }
 
@@ -23,7 +23,7 @@ class TV {
 }
 
 // Advanced Decorator
-function printable(constructorFn: Function) {
+function printable(constructorFn: Function): any {
   constructorFn.prototype.print = function() {
     console.log(this)
   }
@@ -38,13 +38,25 @@ const plant = new Plant()
 plant.print()
 
 // Method Decorator
-function editable(value: boolean) {
+function editable(value: boolean): any {
   return function(target: any, propName: string, descriptor: PropertyDecorator) {
     descriptor.writable = value
   }
 }
 
+// Property Decorator
+function overwritable(value: boolean): any {
+  return function(target: any, propName: string) {
+    const newDescriptor: PropertyDescriptor = {
+      writable: value
+    }
+
+    return newDescriptor
+  }
+}
+
 class Project {
+  @overwritable(false)
   projectName: string
 
   constructor(name: string) {
