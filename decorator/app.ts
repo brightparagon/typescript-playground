@@ -35,18 +35,21 @@ class Plant {
 }
 
 const plant = new Plant()
-plant.print()
+// plant.print()
 
 // Method Decorator
 function editable(value: boolean): any {
   return function(target: any, propName: string, descriptor: PropertyDecorator) {
-    descriptor.writable = value
+    // descriptor.writable = value
   }
 }
 
 // Property Decorator
 function overwritable(value: boolean): any {
   return function(target: any, propName: string) {
+    console.log(target)
+    console.log(propName)
+
     const newDescriptor: PropertyDescriptor = {
       writable: value
     }
@@ -55,7 +58,7 @@ function overwritable(value: boolean): any {
   }
 }
 
-class Project {
+class Project2 {
   @overwritable(false)
   projectName: string
 
@@ -69,9 +72,36 @@ class Project {
   }
 }
 
-const project = new Project("New Project")
+const project = new Project2("New Project")
 project.calcBudget()
 project.calcBudget = () => {
   console.log(2000)
 }
 project.calcBudget()
+
+// Parameter Decorator
+function printInfo(target: any, methodName: string, paramIndex: number) {
+  console.log(target)
+  console.log(methodName)
+  console.log(paramIndex)
+}
+
+class Course {
+  name: string
+
+  constructor(name: string) {
+    this.name = name
+  }
+
+  printStudentNumbers(mode: string, @printInfo printAll: boolean) {
+    if (printAll) {
+      console.log(mode + 10000)
+    } else {
+      console.log(mode + 2000)
+    }
+  }
+}
+
+const course = new Course("Super Course")
+course.printStudentNumbers("anythig", true)
+course.printStudentNumbers("anythig", false)
