@@ -1,0 +1,19 @@
+{
+  "name": "third-party",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p",
+    "start": "webpack -d -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
